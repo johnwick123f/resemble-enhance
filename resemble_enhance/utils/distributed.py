@@ -3,9 +3,9 @@ import socket
 from functools import cache, partial, wraps
 from typing import Callable
 
-import deepspeed
+#import deepspeed
 import torch
-from deepspeed.accelerator import get_accelerator
+#from deepspeed.accelerator import get_accelerator
 from torch.distributed import broadcast_object_list
 
 

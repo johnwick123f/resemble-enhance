@@ -3,11 +3,11 @@ import re
 from functools import cache, partial
 from typing import Callable, TypeVar
 
-import deepspeed
+#import deepspeed
 import pandas as pd
-from deepspeed.accelerator import get_accelerator
-from deepspeed.runtime.engine import DeepSpeedEngine
-from deepspeed.runtime.utils import clip_grad_norm_
+#from deepspeed.accelerator import get_accelerator
+#from deepspeed.runtime.engine import DeepSpeedEngine
+#from deepspeed.runtime.utils import clip_grad_norm_
 from torch import nn
 
 from .distributed import fix_unset_envs

@@ -31,7 +31,7 @@ def fix_unset_envs():
 @cache
 def init_distributed():
     fix_unset_envs()
-    deepspeed.init_distributed(get_accelerator().communication_backend_name())
+    #deepspeed.init_distributed(get_accelerator().communication_backend_name())
     torch.cuda.set_device(local_rank())
 
 

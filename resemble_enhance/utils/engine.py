@@ -78,7 +78,7 @@ def _try_each(*fns, e=None):
         return _try_each(*tails)
 
 
-class Engine(DeepSpeedEngine):
+class Engine():
     def __init__(self, *args, ckpt_dir, **kwargs):
         init_distributed()
         super().__init__(args=None, *args, **kwargs)

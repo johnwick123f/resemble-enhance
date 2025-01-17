@@ -22,7 +22,8 @@ def load_G(run_dir: Path, hp: HParams | None = None, training=True):
         hp = HParams.load(run_dir)
         assert isinstance(hp, HParams)
     model = Enhancer(hp)
-    engine = Engine(model=model, config_class=DeepSpeedConfig(hp.deepspeed_config), ckpt_dir=run_dir / "ds" / "G")
+    engine = None
+    #engine = Engine(model=model, config_class=DeepSpeedConfig(hp.deepspeed_config), ckpt_dir=run_dir / "ds" / "G")
     if training:
         engine.load_checkpoint()
     else:
@@ -35,7 +36,8 @@ def load_D(run_dir: Path, hp: HParams | None):
         hp = HParams.load(run_dir)
         assert isinstance(hp, HParams)
     model = Discriminator(hp)
-    engine = Engine(model=model, config_class=DeepSpeedConfig(hp.deepspeed_config), ckpt_dir=run_dir / "ds" / "D")
+    engine = None
+    #engine = Engine(model=model, config_class=DeepSpeedConfig(hp.deepspeed_config), ckpt_dir=run_dir / "ds" / "D")
     engine.load_checkpoint()
     return engine
 
